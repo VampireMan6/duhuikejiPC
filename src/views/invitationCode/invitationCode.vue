@@ -221,6 +221,10 @@
               <Input v-model="input9" placeholder="请输入验证码" style="width: 30%" />
               <sidentify :identifyCode='identifyCode' @even="even" style="display:inline-block;position:relative;top:13px;left:16px"></sidentify>
             </div>
+            <div class="title flex">
+              <span class="spanLeft1"></span>
+              <p v-if="input3s">验证码错误</p>
+            </div>
           </Col>
         </Row>
         <Row>
@@ -228,7 +232,10 @@
             <div class="flex coloum">
               <span class="spanLeft2">* 验证码</span>
               <Input v-model="input9" placeholder="请输入验证码" style="width: 100%" />
-              <sidentify :identifyCode='identifyCode' @even="even" style="display:inline-block;position:relative;top:13px;left:16px"></sidentify>
+              <div class="title flex">
+                <p v-if="input3s">验证码错误</p>
+              </div>
+              <sidentify2 :identifyCode='identifyCode' @even="even" style="display:inline-block;position:relative;top:13px;"></sidentify2>
             </div>
           </Col>
         </Row>
@@ -278,15 +285,28 @@
 <script>
 import EditorBar from '@/components/wangEnduit'
 import sidentify from '@/components/sidentify'  //**引入验证码组件**
+import sidentify2 from '@/components/sidentify2'  //**引入验证码组件**
 
 export default {
   components: { 
     EditorBar,
-    sidentify
+    sidentify,
+    sidentify2
+  },
+  created() {
+    this.createCode();
   },
   mounted() {
     this.identifyCode = "";
     this.makeCode(this.identifyCodes, 4);
+  },
+  computed: {
+    input3s() {
+      if(!this.input9.trim()) {
+        return false
+      };
+      return this.input9.trim() !== this.identifyCode ? true : false
+    }
   },
   data () {
     return {
@@ -316,6 +336,25 @@ export default {
     };
   },
   methods: {
+    createCode(){
+      //先清空验证码的输入
+                 let code = "";
+                 let checkCode = "";
+                 let picLyanzhengma = "";
+                 //验证码的长度  
+                    var codeLength = 4; 
+                    //随机数 
+          var random = new Array(0,1,2,3,4,5,6,7,8,9);  
+          for(var i = 0; i < codeLength; i++) {
+                        //取得随机数的索引（0~35）
+                            var index = Math.floor(Math.random()*10);   
+                            //根据索引取得随机数加到code上
+              code += random[index];   
+                    }
+                    //把code值赋给验证码  
+          checkCode = code; 
+          console.log(checkCode)
+      },
     change(val) {  //编辑器内容
       console.log(val)  
     },

@@ -1,6 +1,6 @@
 <template>
-  <div class="s-canvas">
-    <canvas id="s-canvas" :width="contentWidth" :height="contentHeight" @click="even"></canvas>
+  <div class="s-canvas2">
+    <canvas id="s-canvas2" :width="contentWidth" :height="contentHeight" @click="even"></canvas>
   </div>
 </template>
 <script>
@@ -76,7 +76,7 @@ export default {
       return 'rgb(255,255,255)'
     },
     drawPic() {
-      let canvas = document.getElementById('s-canvas')
+      let canvas = document.getElementById('s-canvas2')
       let ctx = canvas.getContext('2d')
       // ctx.textBaseline = 'bottom'
       // 绘制背景

@@ -115,7 +115,7 @@ export default {
         return;
       };
       if(this.input1s) {
-        this.$Message.error('邮箱 / 手机号格式不正确');
+        this.$Message.warning('邮箱 / 手机号格式不正确');
         return;
       };
       if(!this.input2.trim()) {
@@ -127,7 +127,7 @@ export default {
         return;
       };
       if(this.input3s) {
-        this.$Message.error('验证码错误');
+        this.$Message.warning('验证码错误');
         return;
       };
     }

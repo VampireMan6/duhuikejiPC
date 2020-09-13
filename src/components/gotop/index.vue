@@ -1,6 +1,6 @@
 <template>
-  <div class="back-to-top" @click="backToTop" v-show="showReturnToTop" @mouseenter="show" @mouseleave="hide">
-    <p class="">返回顶部</p>
+  <div class="back-to-top" title="返回顶部" @click="backToTop" v-show="showReturnToTop" @mouseenter="show" @mouseleave="hide">
+    <Icon type="ios-arrow-up" color="#fff" size="24"/>
   </div>
 </template>
 
@@ -57,10 +57,16 @@ export default {
 <style scoped>
 .back-to-top {
   position: fixed;
+  width: 48px;
+  height: 40px;
+  background-color: rgba(0,0,0,.6);
   bottom: 10%;
-  right: 30px;
+  right: 16px;
   z-index: 9999;
   cursor: pointer;
-  width: auto;
+  text-align: center;
+  line-height: 48px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
 </style>

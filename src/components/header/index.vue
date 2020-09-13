@@ -95,7 +95,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2000;
+  z-index: 3;
   margin: 0 auto;
   background-color: rgba(60, 136, 204, 0.32);
 }
