@@ -3,7 +3,7 @@
     <div class="header-content">
       <!-- 顶部左侧导航栏 -->
       <div class="left flex">
-        <router-link to="home" class="flex logoimg"><img class="img" src="../../assets/image/logo.png" alt=""></router-link>
+        <router-link to="/home" class="flex logoimg"><img class="img" src="../../assets/image/logo.png" alt=""></router-link>
         <!-- <div class="">图标</div> -->
         <Menu mode="horizontal" theme="primary" active-name="1">
           <Submenu name="1">
@@ -39,17 +39,17 @@
       <!-- 顶部右侧导航栏 -->
       <div class="right flex">
         <Menu mode="horizontal" theme="primary" active-name="1" v-if="!$store.state.isLogin">
-          <MenuItem name="6" to="login1">
+          <MenuItem name="6" to="/login1">
               白帽登录
           </MenuItem>
           <Submenu name="7">
               <template slot="title">
                   注册
               </template>
-              <MenuItem name="8-1" to='register1'>白帽子注册</MenuItem>
-              <MenuItem name="8-2" to='register2'>单位用户注册</MenuItem>
+              <MenuItem name="8-1" to='/register1'>白帽子注册</MenuItem>
+              <MenuItem name="8-2" to='/register2'>单位用户注册</MenuItem>
           </Submenu>
-          <MenuItem name="8" to="login2">
+          <MenuItem name="8" to="/login2">
               单位用户登录
           </MenuItem>
         </Menu>

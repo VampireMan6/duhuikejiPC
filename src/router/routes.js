@@ -8,6 +8,8 @@ const register2 = ()=>import("@/views/register/register2.vue")
 const forgetPsw1 = ()=> import("@/views/forgetPsw/forgetPsw1.vue")
 const forgetPsw2 = ()=> import("@/views/forgetPsw/forgetPsw2.vue")
 const invitationCode = ()=> import("@/views/invitationCode/invitationCode.vue")
+const userhome = ()=> import("@/views/userHome/userHome.vue")
+const user1 = ()=> import("@/views/userHome/user1.vue")
 
 const routes = [
   {
@@ -90,6 +92,27 @@ const routes = [
           isLogin: false
         },
         component: invitationCode
+      },
+      {
+        path: '/userhome',
+        name: 'userhome',
+        meta: {
+          title: '主页',
+          isLogin: false
+        },
+        redirect: '/userhome/user1',
+        component: userhome,
+        children: [
+          {
+            path: 'user1',
+            name: 'user1',
+            meta: {
+              title: '111',
+              isLogin: false
+            },
+            component: user1
+          },
+        ]
       },
     ]
   }

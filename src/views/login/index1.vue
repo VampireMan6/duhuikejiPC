@@ -110,6 +110,7 @@ export default {
       }
     },
     login() {
+      this.$router.push({path: '/userhome'})
       if(!this.input1.trim()) {
         this.$Message.error('邮箱 / 手机号不能为空');
         return;
