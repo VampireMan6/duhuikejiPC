@@ -163,7 +163,7 @@
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
             <div class="flex flex-1">
               <span class="spanLeft1">* 文章/漏洞描述</span>
-              <Input v-model="input6" type="textarea" :rows="6" placeholder="请输入漏洞描述，简单的介绍这是什么漏洞,字数限制30字。" style="width: 80%" /> 
+              <Input v-model="input6" type="textarea" :rows="6" placeholder="请输入漏洞描述，简单的介绍这是什么漏洞,字数限制30字。" style="width: 80%" />
             </div>
           </Col>
         </Row>
@@ -199,7 +199,7 @@
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
             <div class="flex flex-1">
               <span class="spanLeft1">* 修复方案</span>
-              <Input v-model="input8" type="textarea" :rows="6" placeholder="请输入修复方案" style="width: 80%" /> 
+              <Input v-model="input8" type="textarea" :rows="6" placeholder="请输入修复方案" style="width: 80%" />
             </div>
           </Col>
         </Row>
@@ -244,7 +244,7 @@
       <div class="m-b-16">
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
-            <span class="spanLeft1">* 用户协议</span>       
+            <span class="spanLeft1">* 用户协议</span>
             <input type="checkbox" :checked='checked' @change="evenSelect">
             <router-link to="">《 同意都会信息平台用户协议 》</router-link>
           </Col>
@@ -265,7 +265,7 @@
       <div class="m-b-16">
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
-            <span class="spanLeft1">* 提交漏洞</span>       
+            <span class="spanLeft1">* 提交漏洞</span>
             <Button type="primary" @click="submit">提交漏洞</Button>
           </Col>
         </Row>
@@ -284,28 +284,25 @@
 
 <script>
 import EditorBar from '@/components/wangEnduit'
-import sidentify from '@/components/sidentify'  //**引入验证码组件**
-import sidentify2 from '@/components/sidentify2'  //**引入验证码组件**
+import sidentify from '@/components/sidentify'
+import sidentify2 from '@/components/sidentify2'
 
 export default {
-  components: { 
+  components: {
     EditorBar,
     sidentify,
     sidentify2
   },
-  created() {
-    this.createCode();
-  },
   mounted() {
-    this.identifyCode = "";
-    this.makeCode(this.identifyCodes, 4);
+    this.identifyCode = ''
+    this.makeCode(this.identifyCodes, 4)
   },
   computed: {
     input3s() {
-      if(!this.input9.trim()) {
+      if (!this.input9.trim()) {
         return false
-      };
-      return this.input9.trim() !== this.identifyCode ? true : false
+      }
+      return this.input9.trim() !== this.identifyCode
     }
   },
   data () {
@@ -313,53 +310,32 @@ export default {
       mag: '',
       value: '',
       isClear: false,
-      input1: '',//所属单位
-      input2: '',//漏洞标题
-      input3: '',//域名/IP
-      input4: '',//联系方式 邮箱
-      input5: '',//联系方式 手机号码
-      input6: '',//漏洞描述
-      input7: '<p>1：请按照规范提交漏洞</p><p>2：漏洞思路 以及截图</p><p>3：关于此编辑器以做多层防护，请勿插入& 等符号及标签</p><p>4：请删除此处开始编写漏洞详情</p>',//漏洞详情
-      input8: '',//修复方案
-      input9: '',//验证码
-      select1: '',//内容类型 选择1
-      select2: '',//内容类型 选择2
-      select3: '',//漏洞等级 选择3
-      selectList1: ['Web漏洞','服务器漏洞','通用漏洞','其它','app程序漏洞'],
-      selectList2: ['普通反射型XSS','远程代码执行','远程命令执行','抓取恶意内容','基于DOM的XSS','基于Flash的XSS',
-      'HTTP头注入','存储型XSS','命令注入','SQL注入','上传漏洞','信息泄露','写类型CSRF','读类型CSRF','文件包含',
-      '逻辑漏洞','权限绕过','URL跳转漏洞','文章'],
-      selectList3: ['高危','中危','低危'],
+      input1: '',
+      input2: '',
+      input3: '',
+      input4: '',
+      input5: '',
+      input6: '',
+      input7: '<p>1：请按照规范提交漏洞</p><p>2：漏洞思路 以及截图</p><p>3：关于此编辑器以做多层防护，请勿插入& 等符号及标签</p><p>4：请删除此处开始编写漏洞详情</p>',
+      input8: '',
+      input9: '',
+      select1: '',
+      select2: '',
+      select3: '',
+      selectList1: ['Web漏洞', '服务器漏洞', '通用漏洞', '其它', 'app程序漏洞'],
+      selectList2: ['普通反射型XSS', '远程代码执行', '远程命令执行', '抓取恶意内容', '基于DOM的XSS', '基于Flash的XSS', 'HTTP头注入', '存储型XSS', '命令注入', 'SQL注入', '上传漏洞', '信息泄露', '写类型CSRF', '读类型CSRF', '文件包含', '逻辑漏洞', '权限绕过', 'URL跳转漏洞', '文章'],
+      selectList3: ['高危', '中危', '低危'],
       identifyCode: '',
       identifyCodes: '1234567890',
       checked: false
-    };
+    }
   },
   methods: {
-    createCode(){
-      //先清空验证码的输入
-                 let code = "";
-                 let checkCode = "";
-                 let picLyanzhengma = "";
-                 //验证码的长度  
-                    var codeLength = 4; 
-                    //随机数 
-          var random = new Array(0,1,2,3,4,5,6,7,8,9);  
-          for(var i = 0; i < codeLength; i++) {
-                        //取得随机数的索引（0~35）
-                            var index = Math.floor(Math.random()*10);   
-                            //根据索引取得随机数加到code上
-              code += random[index];   
-                    }
-                    //把code值赋给验证码  
-          checkCode = code; 
-          console.log(checkCode)
-      },
-    change(val) {  //编辑器内容
-      console.log(val)  
+    change(val) {
+      console.log(val)
     },
-    even() {//验证码
-      this.identifyCode = "";
+    even() {
+      this.identifyCode = '';
       this.makeCode(this.identifyCodes, 4);
     },
     randomNum(min, max) {
@@ -367,20 +343,18 @@ export default {
     },
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
-        this.identifyCode += this.identifyCodes[
-          this.randomNum(0, this.identifyCodes.length)
-        ];
+        this.identifyCode += this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       };
     },
-    evenSelect(e) {//用户协议选择
+    evenSelect(e) {
       this.checked = e.target.checked;
     },
-    submit() {//提交
-      if(!this.input1) {
+    submit() {
+      if (!this.input1) {
         this.$Message.error('所属单位不能为空');
-        return;
+        return false
       }
-    },
+    }
   }
 }
 </script>

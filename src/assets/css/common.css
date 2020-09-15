@@ -21,3 +21,7 @@ p { margin: 0; padding: 0;}
 .c-04B {color: #04B404;}
 .f-20 {font-size: 20px;}
 .w-100 {width: 100%;}
+.h-100 {height: 100%;}
+.ivu-drawer-content { background-color: #28333E !important;}
+.ivu-drawer-body { padding: 0px !important; background-color: #28333E !important;}
+.el-menu { border-right: solid 1px #28333E !important}

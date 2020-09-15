@@ -24,6 +24,12 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }],
+    "space-before-function-paren": 0,
+    'quotes': [1,'single'],
+    'space-before-blocks': 0,
+    'key-spacing': 0,
+    'semi': 0
   }
 }
