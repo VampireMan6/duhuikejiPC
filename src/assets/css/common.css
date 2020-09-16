@@ -3,10 +3,12 @@ body::-webkit-scrollbar { display: none;}
 body { /*Firefox浏览器*/ scrollbar-width: none; /* ie浏览器 */ -ms-overflow-style: none;}
 p { margin: 0; padding: 0;}
 .flex { display: flex;}
+.flex-wrap {flex-wrap: wrap;}
 .flex-1 { flex: 1}
 .coloum {flex-direction: column;}
 .j-c {justify-content: center;}
 .f-b {justify-content: space-between;}
+.f-a {justify-content: space-around;}
 .f-c {align-content: center;}
 .l-h-32 {line-height: 32px;}
 .p-d {height: 32px;width: 100px;text-align: right;margin-right: 15px;}
@@ -14,6 +16,7 @@ p { margin: 0; padding: 0;}
 .m-b-8 {margin-bottom: 8px;}
 .m-b-16 {margin-bottom: 16px;}
 .m-l-10 {margin-left: 10px;}
+.p-x-16 {padding: 0 16px;}
 .title{height: 24px;font-size: 12px;color: #ff3c3c;line-height: 24px;}
 .t-c {text-align: center;}
 .t-r {text-align: right;}
