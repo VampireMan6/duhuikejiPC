@@ -1,6 +1,6 @@
 <template>
-  <div class="content">
-    3
+  <div>
+    22222222
   </div>
 </template>
 
@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style scoped>
-.content {padding: 16px;}
+
 </style>

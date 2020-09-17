@@ -57,7 +57,7 @@ const routes = [
         },
         component: () => import('@/views/register/register2.vue')
       },
-      {
+      { // 首页
         path: '/home',
         name: 'home',
         meta: {
@@ -93,7 +93,7 @@ const routes = [
         },
         component: () => import('@/views/invitationCode/invitationCode.vue')
       },
-      {// 个人主页
+      {// 个人主页 白帽登录
         path: '/userhome',
         name: 'userhome',
         meta: {
@@ -130,16 +130,43 @@ const routes = [
             },
             component: () => import('@/views/userHome/List1/myProject.vue')
           },
-          {// 项目管理 项目申请
-            path: 'project/projectApplication',
-            name: 'projectApplication',
+          // {// 项目管理 项目申请
+          //   path: 'project/projectApplication',
+          //   name: 'projectApplication',
+          //   meta: {
+          //     title: '项目池',
+          //     isLogin: false
+          //   },
+          //   component: () => import('@/views/userHome/List1/projectApplication.vue')
+          // }
+          {// 漏洞管理 我的漏洞
+            path: 'loophole/myLoophole',
+            name: 'myLoophole',
             meta: {
-              title: '项目池',
+              title: '我的漏洞',
               isLogin: false
             },
-            component: () => import('@/views/userHome/List1/projectApplication.vue')
+            component: () => import('@/views/userHome/List2/myLoophole.vue')
+          },
+          {// 漏洞管理 提交漏洞
+            path: 'loophole/submitLoophole',
+            name: 'submitLoophole',
+            meta: {
+              title: '我的漏洞',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List2/submitLoophole.vue')
           }
         ]
+      },
+      { // 白帽登录 我的项目 详情
+        path: '/myProjectDetail',
+        name: 'myProjectDetail',
+        meta: {
+          title: '项目详情',
+          isLogin: false
+        },
+        component: () => import('@/views/userHome/myProjectDetail')
       }
     ]
   }

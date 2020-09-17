@@ -38,7 +38,7 @@
       </div>
       <!-- 顶部右侧导航栏 -->
       <div class="right flex">
-        <Menu mode="horizontal" theme="primary" active-name="1" v-if="$store.state.isLogin">
+        <Menu mode="horizontal" theme="primary" active-name="1" v-if="!$store.state.isLogin">
           <MenuItem name="6" to="/login1">
               白帽登录
           </MenuItem>

@@ -25,15 +25,15 @@
                   </template>
                   <el-menu-item index="项目管理,项目池,projectPool">项目池</el-menu-item>
                   <el-menu-item index="项目管理,我的项目,myProject">我的项目</el-menu-item>
-                  <el-menu-item index="项目管理,项目申请,projectApplication">项目申请</el-menu-item>
+                  <!-- <el-menu-item index="项目管理,项目申请,projectApplication">项目申请</el-menu-item> -->
                 </el-submenu>
                 <el-submenu index="3">
                   <template slot="title">
                     <i class="iconfont icon-erji-loudongguanli"></i>
                     <span slot="title">漏洞管理</span>
                   </template>
-                  <el-menu-item index="漏洞管理,我的漏洞,user2">我的漏洞</el-menu-item>
-                  <el-menu-item index="漏洞管理,提交漏洞,user2">提交漏洞</el-menu-item>
+                  <el-menu-item index="漏洞管理,我的漏洞,myLoophole">我的漏洞</el-menu-item>
+                  <el-menu-item index="漏洞管理,提交漏洞,submitLoophole">提交漏洞</el-menu-item>
                 </el-submenu>
                 <el-submenu index="4">
                   <template slot="title">
@@ -126,15 +126,15 @@
             </template>
             <el-menu-item index="项目管理,项目池,projectPool">项目池</el-menu-item>
             <el-menu-item index="项目管理,我的项目,myProject">我的项目</el-menu-item>
-            <el-menu-item index="项目管理,项目申请,projectApplication">项目申请</el-menu-item>
+            <!-- <el-menu-item index="项目管理,项目申请,projectApplication">项目申请</el-menu-item> -->
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
               <i class="iconfont icon-erji-loudongguanli"></i>
               <span slot="title">漏洞管理</span>
             </template>
-            <el-menu-item index="漏洞管理,我的漏洞,user2">我的漏洞</el-menu-item>
-            <el-menu-item index="漏洞管理,提交漏洞,user2">提交漏洞</el-menu-item>
+            <el-menu-item index="漏洞管理,我的漏洞,myLoophole">我的漏洞</el-menu-item>
+            <el-menu-item index="漏洞管理,提交漏洞,submitLoophole">提交漏洞</el-menu-item>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">

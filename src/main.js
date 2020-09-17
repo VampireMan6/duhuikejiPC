@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'// 路由
 import store from './store/store'// vuex 状态管理
-import { Button, Menu, MenuItem, Submenu, Icon, Input, Row, Col, Option, Select, Message, MenuGroup, Drawer, Tag, Dropdown, DropdownMenu, DropdownItem, Page } from 'view-design';// 引入 view ui库
+import { Button, Menu, MenuItem, Submenu, Icon, Input, Row, Col, Option, Select, Message, MenuGroup, Drawer, Tag, Dropdown, DropdownMenu, DropdownItem, Page, Table } from 'view-design';// 引入 view ui库
 import 'view-design/dist/styles/iview.css';// 引入view ui样式
 import './assets/css/common.css'// css全局样式
 import 'babel-polyfill' // ie 浏览器不支持es6新语法问题
@@ -31,6 +31,7 @@ Vue.component('Dropdown', Dropdown)
 Vue.component('DropdownMenu', DropdownMenu)
 Vue.component('DropdownItem', DropdownItem)
 Vue.component('Page', Page)
+Vue.component('Table', Table)
 
 Vue.prototype.$Message = Message
 
