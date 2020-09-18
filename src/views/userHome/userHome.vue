@@ -40,18 +40,18 @@
                     <i class="iconfont icon-wenzhangguanli"></i>
                     <span slot="title">文章管理</span>
                   </template>
-                  <el-menu-item index="文章管理,提交文章,user2">提交文章</el-menu-item>
-                  <el-menu-item index="文章管理,我的文章,user2">我的文章</el-menu-item>
+                  <el-menu-item index="文章管理,提交文章,submitArticle">提交文章</el-menu-item>
+                  <el-menu-item index="文章管理,我的文章,myArticle">我的文章</el-menu-item>
                 </el-submenu>
                 <el-submenu index="5">
                   <template slot="title">
                     <i class="iconfont icon-zu"></i>
                     <span slot="title">我的团队</span>
                   </template>
-                  <el-menu-item index="我的团队,团队列表,user2">团队列表</el-menu-item>
-                  <el-menu-item index="我的团队,创建团队,user2">创建团队</el-menu-item>
-                  <el-menu-item index="我的团队,团队管理,user2">团队管理</el-menu-item>
-                  <el-menu-item index="我的团队,团队活动,user2">团队活动</el-menu-item>
+                  <el-menu-item index="我的团队,团队列表,teamList">团队列表</el-menu-item>
+                  <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
+                  <el-menu-item index="我的团队,团队管理,teamManage">团队管理</el-menu-item>
+                  <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item>
                 </el-submenu>
                 <el-submenu index>
                   <template slot="title">
@@ -87,7 +87,6 @@
                 <el-breadcrumb-item v-if="menuTitle2">{{menuTitle2}}</el-breadcrumb-item>
               </el-breadcrumb>
             </div>
-            <router-view></router-view>
           </Col>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="right-top w-100">
@@ -97,8 +96,8 @@
                 <el-breadcrumb-item v-if="menuTitle2">{{menuTitle2}}</el-breadcrumb-item>
               </el-breadcrumb>
             </div>
-            <router-view></router-view>
           </Col>
+          <router-view></router-view>
         </Row>
       </div>
       <!-- 左侧弹出层 -->
@@ -141,18 +140,18 @@
               <i class="iconfont icon-wenzhangguanli"></i>
               <span slot="title">文章管理</span>
             </template>
-            <el-menu-item index="文章管理,提交文章,user2">提交文章</el-menu-item>
-            <el-menu-item index="文章管理,我的文章,user2">我的文章</el-menu-item>
+            <el-menu-item index="文章管理,提交文章,submitArticle">提交文章</el-menu-item>
+            <el-menu-item index="文章管理,我的文章,myArticle">我的文章</el-menu-item>
           </el-submenu>
           <el-submenu index="5">
             <template slot="title">
               <i class="iconfont icon-zu"></i>
               <span slot="title">我的团队</span>
             </template>
-            <el-menu-item index="我的团队,团队列表,user2">团队列表</el-menu-item>
-            <el-menu-item index="我的团队,创建团队,user2">创建团队</el-menu-item>
-            <el-menu-item index="我的团队,团队管理,user2">团队管理</el-menu-item>
-            <el-menu-item index="我的团队,团队活动,user2">团队活动</el-menu-item>
+            <el-menu-item index="我的团队,团队列表,teamList">团队列表</el-menu-item>
+            <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
+            <el-menu-item index="我的团队,团队管理,teamManage">团队管理</el-menu-item>
+            <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item>
           </el-submenu>
           <el-submenu index>
             <template slot="title">

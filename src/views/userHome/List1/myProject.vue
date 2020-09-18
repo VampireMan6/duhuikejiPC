@@ -72,7 +72,7 @@ export default {
             return h('div', [
               h('Button', {
                 props: {
-                  type: 'primary',
+                  type: 'default',
                   size: 'small'
                 },
                 style: {
@@ -86,7 +86,7 @@ export default {
               }, '查看项目'),
               h('Button', {
                 props: {
-                  type: 'primary',
+                  type: 'default',
                   size: 'small'
                 },
                 style: {

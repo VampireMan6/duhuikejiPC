@@ -47,7 +47,7 @@
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 所属单位</span>
-              <Input v-model="input1" placeholder="请输入单位 / 公司名称" style="width: 100%" />
+              <Input v-model="input1" placeholder="请输入单位/公司名称" style="width: 100%" />
             </div>
           </Col>
         </Row>
@@ -57,14 +57,14 @@
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
             <span class="spanLeft1">* 文章/漏洞标题</span>
-            <Input v-model="input2" placeholder="请输入单位/公司名称" style="width: 80%" />
+            <Input v-model="input2" placeholder="文章/漏洞标题" style="width: 80%" />
           </Col>
         </Row>
         <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 文章/漏洞标题</span>
-              <Input v-model="input2" placeholder="请输入文章 / 漏洞标题,标题字数为16位" style="width: 100%" />
+              <Input v-model="input2" placeholder="文章/漏洞标题" style="width: 100%" />
             </div>
           </Col>
         </Row>
@@ -81,7 +81,7 @@
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 域名/IP</span>
-              <Input v-model="input3" placeholder="请输入文章 / 漏洞标题,标题字数为16位" style="width: 100%" />
+              <Input v-model="input3" placeholder="请输入域名或者IP" style="width: 100%" />
             </div>
           </Col>
         </Row>
@@ -245,7 +245,7 @@
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
             <span class="spanLeft1">* 用户协议</span>
-            <input type="checkbox" :checked='checked' @change="evenSelect">
+            <input type="checkbox" v-model="input10" :value="true" class="relative" style="top: 2px">
             <router-link to="">《 同意都会信息平台用户协议 》</router-link>
           </Col>
         </Row>
@@ -254,7 +254,7 @@
             <div class="flex coloum j-c">
               <span class="spanLeft2">* 用户协议</span>
               <div>
-                <input type="checkbox" :checked='checked' @change="evenSelect">
+                <input type="checkbox" v-model="input10" :value="true" class="relative" style="top: 2px">
                 <router-link to="">《 同意都会信息平台用户协议 》</router-link>
               </div>
             </div>
@@ -265,16 +265,13 @@
       <div class="m-b-16">
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
-            <span class="spanLeft1">* 提交漏洞</span>
+            <span class="spanLeft1"></span>
             <Button type="primary" @click="submit">提交漏洞</Button>
           </Col>
         </Row>
         <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
-            <div class="flex coloum j-c">
-              <span class="spanLeft2">* 提交漏洞</span>
-              <Button type="primary" @click="submit">提交漏洞</Button>
-            </div>
+            <Button type="primary" @click="submit">提交漏洞</Button>
           </Col>
         </Row>
       </div>
@@ -319,6 +316,7 @@ export default {
       input7: '<p>1：请按照规范提交漏洞</p><p>2：漏洞思路 以及截图</p><p>3：关于此编辑器以做多层防护，请勿插入& 等符号及标签</p><p>4：请删除此处开始编写漏洞详情</p>',
       input8: '',
       input9: '',
+      input10: true,
       select1: '',
       select2: '',
       select3: '',
@@ -326,8 +324,7 @@ export default {
       selectList2: ['普通反射型XSS', '远程代码执行', '远程命令执行', '抓取恶意内容', '基于DOM的XSS', '基于Flash的XSS', 'HTTP头注入', '存储型XSS', '命令注入', 'SQL注入', '上传漏洞', '信息泄露', '写类型CSRF', '读类型CSRF', '文件包含', '逻辑漏洞', '权限绕过', 'URL跳转漏洞', '文章'],
       selectList3: ['高危', '中危', '低危'],
       identifyCode: '',
-      identifyCodes: '1234567890',
-      checked: false
+      identifyCodes: '1234567890'
     }
   },
   methods: {
@@ -345,9 +342,7 @@ export default {
       for (let i = 0; i < l; i++) {
         this.identifyCode += this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       };
-    },
-    evenSelect(e) {
-      this.checked = e.target.checked;
+      console.log(this.identifyCode)
     },
     submit() {
       if (!this.input1) {

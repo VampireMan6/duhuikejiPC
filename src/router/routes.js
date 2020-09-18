@@ -146,7 +146,7 @@ const routes = [
               title: '我的漏洞',
               isLogin: false
             },
-            component: () => import('@/views/userHome/List2/myLoophole.vue')
+            component: () => import('@/views/userHome/List2/myLoopholes.vue')
           },
           {// 漏洞管理 提交漏洞
             path: 'loophole/submitLoophole',
@@ -156,6 +156,60 @@ const routes = [
               isLogin: false
             },
             component: () => import('@/views/userHome/List2/submitLoophole.vue')
+          },
+          {// 文章管理 提交文章
+            path: 'article/submitArticle',
+            name: 'submitArticle',
+            meta: {
+              title: '提交文章',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List3/submitArticle.vue')
+          },
+          {// 文章管理 我的文章
+            path: 'article/myArticle',
+            name: 'myArticle',
+            meta: {
+              title: '我的漏洞',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List3/myArticle.vue')
+          },
+          {// 我的团队 团队列表
+            path: 'team/teamList',
+            name: 'teamList',
+            meta: {
+              title: '团队列表',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List4/teamList.vue')
+          },
+          {// 我的团队 创建团队
+            path: 'team/createTeam',
+            name: 'createTeam',
+            meta: {
+              title: '创建团队',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List4/createTeam.vue')
+          },
+          {// 我的团队 团队管理
+            path: 'team/teamManage',
+            name: 'teamManage',
+            meta: {
+              title: '团队管理',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List4/teamManage.vue')
+          },
+          {// 我的团队 团队活动
+            path: 'team/teamActivity',
+            name: 'teamActivity',
+            meta: {
+              title: '团队活动',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List4/teamActivity.vue')
           }
         ]
       },

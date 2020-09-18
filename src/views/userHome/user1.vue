@@ -27,6 +27,7 @@ export default {
     return {};
   },
   mounted () {
+    console.log(111111)
     this.getEchartData();
     this.getEchartData1();
     this.getEchartData2();
