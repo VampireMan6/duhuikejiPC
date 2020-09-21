@@ -58,13 +58,13 @@
                     <i class="iconfont icon-gerenzhongxin"></i>
                     <span slot="title">个人中心</span>
                   </template>
-                  <el-menu-item index="个人中心,我的积分,user2">我的积分</el-menu-item>
-                  <el-menu-item index="个人中心,基本资料,user2">基本资料</el-menu-item>
-                  <el-menu-item index="个人中心,个人资料,user2">个人资料</el-menu-item>
-                  <el-menu-item index="个人中心,账号绑定,user2">账号绑定</el-menu-item>
-                  <el-menu-item index="个人中心,密码修改,user2">密码修改</el-menu-item>
+                  <el-menu-item index="个人中心,基本资料,baseData">基本资料</el-menu-item>
+                  <el-menu-item index="个人中心,我的积分,myIntegral">我的积分</el-menu-item>
+                  <el-menu-item index="个人中心,账号绑定,accountBinding">账号绑定</el-menu-item>
+                  <el-menu-item index="个人中心,收货地址,address">收货地址</el-menu-item>
+                  <el-menu-item index="个人中心,密码修改,changePassword">密码修改</el-menu-item>
                 </el-submenu>
-                <el-menu-item index="实名认证,user2">
+                <el-menu-item index="实名认证,certification">
                   <i class="iconfont icon-kefujingli-"></i>
                   <span slot="title">实名认证</span>
                 </el-menu-item>
@@ -158,13 +158,13 @@
               <i class="iconfont icon-gerenzhongxin"></i>
               <span slot="title">个人中心</span>
             </template>
-            <el-menu-item index="个人中心,我的积分,user2">我的积分</el-menu-item>
-            <el-menu-item index="个人中心,基本资料,user2">基本资料</el-menu-item>
-            <el-menu-item index="个人中心,个人资料,user2">个人资料</el-menu-item>
-            <el-menu-item index="个人中心,账号绑定,user2">账号绑定</el-menu-item>
-            <el-menu-item index="个人中心,密码修改,user2">密码修改</el-menu-item>
+            <el-menu-item index="个人中心,基本资料,baseData">基本资料</el-menu-item>
+            <el-menu-item index="个人中心,我的积分,myIntegral">我的积分</el-menu-item>
+            <el-menu-item index="个人中心,账号绑定,accountBinding">账号绑定</el-menu-item>
+            <el-menu-item index="个人中心,收货地址,address">收货地址</el-menu-item>
+            <el-menu-item index="个人中心,密码修改,changePassword">密码修改</el-menu-item>
           </el-submenu>
-          <el-menu-item index="实名认证,user2">
+          <el-menu-item index="实名认证,certification">
             <i class="iconfont icon-kefujingli-"></i>
             <span slot="title">实名认证</span>
           </el-menu-item>

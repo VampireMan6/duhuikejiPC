@@ -42,8 +42,6 @@
             <span class="spanLeft1">* 所属单位</span>
             <Input v-model="input1" placeholder="请输入单位/公司名称" style="width: 80%" />
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 所属单位</span>
@@ -59,8 +57,6 @@
             <span class="spanLeft1">* 文章/漏洞标题</span>
             <Input v-model="input2" placeholder="文章/漏洞标题" style="width: 80%" />
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 文章/漏洞标题</span>
@@ -76,8 +72,6 @@
             <span class="spanLeft1">* 域名/IP</span>
             <Input v-model="input3" placeholder="请输入域名或者IP" style="width: 80%" />
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 域名/IP</span>
@@ -96,8 +90,6 @@
               <Input v-model="input5" placeholder="请输入您的电话号码" style="width: 49%;margin-left:1%" />
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 联系方式</span>
@@ -121,8 +113,6 @@
               </Select>
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 内容类型</span>
@@ -145,8 +135,6 @@
                 <Option v-for="item in selectList3" :value='item' :key="item">{{ item }}</Option>
               </Select>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 文章/漏洞等级</span>
@@ -166,8 +154,6 @@
               <Input v-model="input6" type="textarea" :rows="6" placeholder="请输入漏洞描述，简单的介绍这是什么漏洞,字数限制30字。" style="width: 80%" />
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 文章/漏洞描述</span>
@@ -185,8 +171,6 @@
               <editor-bar style="width: 80%" v-model="input7" :isClear="isClear" @change="change"></editor-bar>
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <span class="spanLeft2">* 漏洞详情</span>
             <editor-bar style="width: 100%" v-model="input7" :isClear="isClear" @change="change"></editor-bar>
@@ -202,8 +186,6 @@
               <Input v-model="input8" type="textarea" :rows="6" placeholder="请输入修复方案" style="width: 80%" />
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 修复方案</span>
@@ -226,8 +208,6 @@
               <p v-if="input3s">验证码错误</p>
             </div>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum">
               <span class="spanLeft2">* 验证码</span>
@@ -248,8 +228,6 @@
             <input type="checkbox" v-model="input10" :value="true" class="relative" style="top: 2px">
             <router-link to="">《 同意都会信息平台用户协议 》</router-link>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <div class="flex coloum j-c">
               <span class="spanLeft2">* 用户协议</span>
@@ -268,8 +246,6 @@
             <span class="spanLeft1"></span>
             <Button type="primary" @click="submit">提交漏洞</Button>
           </Col>
-        </Row>
-        <Row>
           <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
             <Button type="primary" @click="submit">提交漏洞</Button>
           </Col>

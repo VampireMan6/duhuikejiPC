@@ -64,6 +64,32 @@
       <div class="m-b-16">
         <Row>
           <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
+            <span class="spanLeft1">* 内容类型</span>
+            <div class="flex f-b" style="width: 80%;display:inline-block">
+              <Select v-model="select1" style="width: 49%" >
+                <Option v-for="item in selectList1" :value="item" :key="item">{{ item }}</Option>
+              </Select>
+              <Select v-model="select2" style="width: 49%;margin-left:1%">
+                <Option v-for="item in selectList2" :value="item" :key="item">{{ item }}</Option>
+              </Select>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col :xs="{ span: 24}" :md="{ span: 24}" :xl="{ span: 0}">
+            <div class="flex coloum">
+              <span class="spanLeft2">* 内容类型</span>
+              <Select class="m-b-8" v-model="select1" style="width: 100%" >
+                <Option v-for="item in selectList1" :value='item' :key="item">{{ item }}</Option>
+              </Select>
+              <Select v-model="select2" style="width: 100%">
+                <Option v-for="item in selectList2" :value='item' :key="item">{{ item }}</Option>
+              </Select>
+            </div>
+          </Col>
+        </Row>
+        <!-- <Row>
+          <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
             <span class="spanLeft1">* 漏洞类型</span>
             <Select v-model="select1" style="width: 80%" >
                 <Option v-for="item in selectList1" :value='item' :key="item">{{ item }}</Option>
@@ -77,7 +103,7 @@
               </Select>
             </div>
           </Col>
-        </Row>
+        </Row> -->
       </div>
     <!-- 漏洞级别 -->
       <div class="m-b-16">
@@ -326,6 +352,7 @@ export default {
       input10: false, // 用户协议
       input11: false, // 是否匿名
       selectList1: ['事件漏洞', '通用漏洞'], // 漏洞类型
+      selectList2: ['普通反射型XSS', '远程代码执行', '远程命令执行', '抓取恶意内容', '基于DOM的XSS', '基于Flash的XSS', 'HTTP头注入', '存储型XSS', '命令注入', 'SQL注入', '上传漏洞', '信息泄露', '写类型CSRF', '读类型CSRF', '文件包含', '逻辑漏洞', '权限绕过', 'URL跳转漏洞', '文章'],
       identifyCode: '',
       identifyCodes: '1234567890',
       formatList: ['zip', 'rar'], // 文件上传类型

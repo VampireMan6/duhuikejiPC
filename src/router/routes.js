@@ -210,6 +210,60 @@ const routes = [
               isLogin: false
             },
             component: () => import('@/views/userHome/List4/teamActivity.vue')
+          },
+          {// 个人中心 收货地址
+            path: 'personalCenter/address',
+            name: 'address',
+            meta: {
+              title: '收货地址',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/address.vue')
+          },
+          {// 个人中心 基本资料
+            path: 'personalCenter/baseData',
+            name: 'baseData',
+            meta: {
+              title: '基本资料',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/baseData.vue')
+          },
+          {// 个人中心 我的积分
+            path: 'personalCenter/myIntegral',
+            name: 'myIntegral',
+            meta: {
+              title: '我的积分',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/myIntegral.vue')
+          },
+          {// 个人中心 账号绑定
+            path: 'personalCenter/accountBinding',
+            name: 'accountBinding',
+            meta: {
+              title: '账号绑定',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/accountBinding.vue')
+          },
+          {// 个人中心 修改密码
+            path: 'personalCenter/changePassword',
+            name: 'changePassword',
+            meta: {
+              title: '修改密码',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/changePassword.vue')
+          },
+          {// 实名认证
+            path: 'certification',
+            name: 'certification',
+            meta: {
+              title: '实名认证',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List6/certification.vue')
           }
         ]
       },

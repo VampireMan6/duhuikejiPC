@@ -22,9 +22,9 @@
           </tr>
         </tbody>
       </table>
-      <div v-if="dataList.length === 0" class="t-c" style="margin-top: 70px;">
-        <p>暂无数据</p>
-      </div>
+    </div>
+    <div v-if="dataList.length === 0" class="t-c">
+      <p>暂无数据</p>
     </div>
     <div class="t-c margin-y-16">
       <Page :total="dataTotal" :page-size="10" @on-change='changePage'/>
@@ -38,7 +38,7 @@ export default {
   computed: {
     tableHeight() {
       if (this.dataList.length === 0) {
-        return 100
+        return 66
       } else {
         return 48 * (this.dataList.length + 1)
       }

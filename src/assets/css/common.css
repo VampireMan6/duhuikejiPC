@@ -6,16 +6,18 @@ p { margin: 0; padding: 0;}
 .flex-wrap {flex-wrap: wrap;}
 .flex-1 { flex: 1}
 .coloum {flex-direction: column;}
-.j-c {justify-content: center;}
+.f-c {justify-content: center;}
 .f-b {justify-content: space-between;}
 .f-a {justify-content: space-around;}
-.f-c {align-content: center;}
+.j-c {align-items: center;}
+.f-e {justify-content: flex-end;}
 .l-h-32 {line-height: 32px;}
 .p-d {height: 32px;width: 100px;text-align: right;margin-right: 15px;}
 .m-b-4 {margin-bottom: 4px;}
 .m-b-8 {margin-bottom: 8px;}
 .m-b-16 {margin-bottom: 16px;}
 .m-l-10 {margin-left: 10px;}
+.m-l-16 {margin-left: 16px;}
 .p-x-16 {padding: 0 16px;}
 .title{height: 24px;font-size: 12px;color: #ff3c3c;line-height: 24px;}
 .t-c {text-align: center;}
@@ -24,6 +26,7 @@ p { margin: 0; padding: 0;}
 .c-04B {color: #04B404;}
 .c-409 {color: #409EFF;}
 .c-w {color: #fff;}
+.c-F56 {color:#F56C6C}
 .b-409 {background-color: #409EFF;}
 .f-20 {font-size: 20px;}
 .w-100 {width: 100%;}
@@ -33,3 +36,4 @@ p { margin: 0; padding: 0;}
 .el-menu { border-right: solid 1px #28333E !important}
 .relative {position: relative;}
 .absolute {position: absolute;}
+.inline-block {display: inline-block;}
