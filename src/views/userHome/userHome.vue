@@ -14,7 +14,7 @@
                 @select="select"
                 :collapse="isCollapse"
               >
-                <el-menu-item index="首页,user">
+                <el-menu-item index="首页,userhome">
                   <i class="iconfont icon-shouye1"></i>
                   <span slot="title">首页</span>
                 </el-menu-item>
@@ -114,7 +114,7 @@
           @select="select"
           :collapse="false"
         >
-          <el-menu-item index="首页,user">
+          <el-menu-item index="首页,userhome">
             <i class="iconfont icon-shouye1"></i>
             <span slot="title">首页</span>
           </el-menu-item>
@@ -190,8 +190,8 @@ export default {
       menuList2: [
         {
           name: '首页',
-          router: 'user',
-          defaultActive: '首页,user'
+          router: 'userhome',
+          defaultActive: '首页,userhome'
         }
       ]
     }
@@ -324,7 +324,7 @@ export default {
   background-color: #28333e;
 }
 .left2 {
-  width: 64x;
+  width: 64px;
   min-height: 100%;
   background-color: #28333e;
 }

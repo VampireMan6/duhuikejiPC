@@ -100,17 +100,17 @@ const routes = [
           title: '主页',
           isLogin: false
         },
-        redirect: '/userhome/user',
+        redirect: '/userhome/homePage',
         component: () => import('@/views/userHome/userHome.vue'),
         children: [
           {// 默认主页
-            path: 'user',
-            name: 'user',
+            path: 'homePage',
+            name: 'homePage',
             meta: {
               title: '主页',
               isLogin: false
             },
-            component: () => import('@/views/userHome/user1.vue')
+            component: () => import('@/views/userHome/homePage.vue')
           },
           {// 项目管理 项目池
             path: 'project/projectPool',
@@ -275,6 +275,72 @@ const routes = [
           isLogin: false
         },
         component: () => import('@/views/userHome/myProjectDetail')
+      },
+      {// 厂商主页 厂商登录
+        path: '/firmHome',
+        name: 'firmHome',
+        meta: {
+          title: '主页',
+          isLogin: false
+        },
+        redirect: '/firmHome/firmHomePage',
+        component: () => import('@/views/firmHome/firmHome.vue'),
+        children: [
+          {// 默认主页
+            path: 'firmHomePage',
+            name: 'firmHomePage',
+            meta: {
+              title: '主页',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/firmHomePage.vue')
+          },
+          {// 项目添加
+            path: 'firm/projectAddition',
+            name: 'projectAddition',
+            meta: {
+              title: '项目添加',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/List1/projectAddition.vue')
+          },
+          {// 项目列表
+            path: 'firm/ProjectList',
+            name: 'ProjectList',
+            meta: {
+              title: '项目列表',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/List2/ProjectList.vue')
+          },
+          {// 漏洞管理
+            path: 'firm/management',
+            name: 'management',
+            meta: {
+              title: '漏洞管理',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/List3/management.vue')
+          },
+          {// 资料设置
+            path: 'firm/dataSettings',
+            name: 'dataSettings',
+            meta: {
+              title: '资料设置',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/List4/dataSettings.vue')
+          },
+          {// 通知设置
+            path: 'firm/notificationSettings',
+            name: 'notificationSettings',
+            meta: {
+              title: '通知设置',
+              isLogin: false
+            },
+            component: () => import('@/views/firmHome/List5/notificationSettings.vue')
+          }
+        ]
       }
     ]
   }

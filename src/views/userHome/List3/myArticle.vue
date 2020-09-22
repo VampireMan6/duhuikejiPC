@@ -63,49 +63,31 @@ export default {
           reward: 100
         },
         {
-          title: 1,
+          title: 3,
           introduction: '标题1',
           time: '2020.12.12',
           reward: 100
         },
         {
-          title: 2,
+          title: 4,
           introduction: '标题1',
           time: '2020.12.12',
           reward: 100
         },
         {
-          title: 1,
+          title: 5,
           introduction: '标题1',
           time: '2020.12.12',
           reward: 100
         },
         {
-          title: 2,
+          title: 6,
           introduction: '标题1',
           time: '2020.12.12',
           reward: 100
         },
         {
-          title: 1,
-          introduction: '标题1',
-          time: '2020.12.12',
-          reward: 100
-        },
-        {
-          title: 10,
-          introduction: '标题1',
-          time: '2020.12.12',
-          reward: 100
-        },
-        {
-          title: 1,
-          introduction: '标题1',
-          time: '2020.12.12',
-          reward: 100
-        },
-        {
-          title: 10,
+          title: 7,
           introduction: '标题1',
           time: '2020.12.12',
           reward: 100

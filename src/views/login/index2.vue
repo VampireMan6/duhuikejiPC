@@ -122,6 +122,7 @@ export default {
       }
     },
     login() {
+      this.$router.push({path: '/firmHome'})
       if (!this.input1.trim()) {
         this.$Message.error('邮箱 / 手机号不能为空');
         return;

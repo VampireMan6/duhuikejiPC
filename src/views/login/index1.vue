@@ -51,7 +51,7 @@
           </div>
             </div>
           <div class="button">
-            <Button type="primary" style="width: 367px" @click="login">立即登录</Button>
+            <Button type="primary" style="width: 367px" @click="login" v-preventClick>立即登录</Button>
           </div>
           <div class="t-r forgetPsw">
             <router-link to="forgetPsw1">忘记密码 ?</router-link>
@@ -119,6 +119,7 @@ export default {
       }
     },
     login() {
+      localStorage.setItem('status', 'sssssssss');
       this.$router.push({path: '/userhome'})
       if (!this.input1.trim()) {
         this.$Message.error('邮箱 / 手机号不能为空');

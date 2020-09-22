@@ -86,7 +86,7 @@ export default {
       if (this.dataList.length === 0) {
         return 100
       } else {
-        return 48 * (this.dataList.length + 1)
+        return 49 * (this.dataList.length + 1)
       }
     },
     dataTotal() {
@@ -241,7 +241,7 @@ export default {
 .item1:hover { background-color: #409EFF;color: #fff;}
 .search {max-width: 260px;margin-left: 16px;}
 .search2 {max-width: 260px;margin-bottom: 16px;}
-/* .table{ overflow-x: auto;} */
+.table{ overflow-x: auto;}
 .th1 {min-width: 80px;text-align: center;}
 .th2 {min-width: 160px;text-align: center;}
 tr {height: 47px;line-height: 47px;}
