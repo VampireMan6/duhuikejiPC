@@ -94,7 +94,7 @@ export default {
       } else {
         return true
       }
-      // return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
+      // return !reg1.test(this.input1.trim()) || !reg2.test(this.input1.trim());
     },
     input3s() {
       if (!this.input3.trim()) {

@@ -40,7 +40,7 @@ export default {
       if (this.dataList.length === 0) {
         return 66
       } else {
-        return 48 * (this.dataList.length + 1)
+        return 50 * (this.dataList.length + 1)
       }
     },
     dataTotal() {
@@ -105,7 +105,7 @@ export default {
 
 <style scoped>
 .content {padding: 16px;}
-/* .table{ overflow-x: auto;} */
+.table{ overflow-x: auto;}
 tr {height: 47px;line-height: 47px;}
 tr:hover {background-color: rgba(235, 247, 255);}
 th {border-bottom: 1px solid #e6e6e6;min-width: 250px;text-align: center;}

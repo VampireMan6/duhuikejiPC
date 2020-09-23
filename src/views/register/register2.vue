@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import sidentify from '@/components/sidentify'  //**引入验证码组件**
+import sidentify from '@/components/sidentify' // **引入验证码组件**
 
 export default {
   data () {
@@ -106,31 +106,36 @@ export default {
     };
   },
   components: {
-    sidentify 
+    sidentify
   },
   mounted() {
-    this.identifyCode = "";
+    this.identifyCode = '';
     this.makeCode(this.identifyCodes, 4);
   },
   computed: {
     input1s() {
-      if(!this.input1.trim()) return false;
-      let reg1 = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+      if (!this.input1.trim()) return false;
+      let reg1 = /^([a-zA-Z]|[0-9])(\w|-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
       let reg2 = /^1(3|4|5|6|7|8|9)\d{9}$/;
-      return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
+      if (reg1.test(this.input1.trim()) || reg2.test(this.input1.trim())) {
+        return false
+      } else {
+        return true
+      }
+      // return !reg1.test(this.input1.trim()) || reg2.test(this.input1.trim());
     },
     input5s() {
-      if(!this.input5.trim()) return false;
-      return this.input4 !== this.input5 ? true : false;
+      if (!this.input5.trim()) return false;
+      return this.input4 !== this.input5;
     },
     input6s() {
-      if(!this.input6.trim()) return false;
-      return this.input6.trim() !== this.identifyCode ? true : false
+      if (!this.input6.trim()) return false;
+      return this.input6.trim() !== this.identifyCode;
     }
   },
   methods: {
     even() {
-      this.identifyCode = "";
+      this.identifyCode = '';
       this.makeCode(this.identifyCodes, 4);
     },
     randomNum(min, max) {
@@ -138,45 +143,43 @@ export default {
     },
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
-        this.identifyCode += this.identifyCodes[
-          this.randomNum(0, this.identifyCodes.length)
-        ];
+        this.identifyCode += this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       };
     },
     login() {
-      if(!this.input1.trim()) {
+      if (!this.input1.trim()) {
         this.$Message.error('邮箱 / 手机号不能为空');
         return;
       };
-      if(this.input1s) {
+      if (this.input1s) {
         this.$Message.error('邮箱 / 手机号格式不正确');
         return;
       };
-      if(!this.input2.trim()) {
+      if (!this.input2.trim()) {
         this.$Message.error('单位名称不能为空');
         return;
       };
-      if(!this.input3.trim()) {
+      if (!this.input3.trim()) {
         this.$Message.error('单位资产/ip不能为空');
         return;
       };
-      if(!this.input4.trim()) {
+      if (!this.input4.trim()) {
         this.$Message.error('密码不能为空');
         return;
       };
-      if(!this.input5.trim()) {
+      if (!this.input5.trim()) {
         this.$Message.error('确认密码不能为空');
         return;
       };
-      if(this.input5s) {
+      if (this.input5s) {
         this.$Message.error('两次密码不一致');
         return;
       };
-      if(!this.input6.trim()) {
+      if (!this.input6.trim()) {
         this.$Message.error('验证码不能为空');
         return;
       };
-      if(this.input6s) {
+      if (this.input6s) {
         this.$Message.error('验证码错误');
         return;
       };

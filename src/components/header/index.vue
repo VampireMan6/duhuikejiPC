@@ -10,29 +10,29 @@
               <template slot="title">
                   白帽服务
               </template>
-              <MenuItem name="1-1">兑换区</MenuItem>
+              <MenuItem name="1-1" to='/home/exchange'>兑换区</MenuItem>
               <MenuItem name="1-2">招募区</MenuItem>
               <MenuItem name="1-3">个人排行</MenuItem>
               <MenuItem name="1-4">团队排行</MenuItem>
               <MenuItem name="1-5">奖励方案说明</MenuItem>
           </Submenu>
-          <MenuItem name="2">
-              测试项目池
+          <MenuItem name="2" to='/home/projectPool'>
+            项目池
           </MenuItem>
-          <MenuItem name="3">
-              漏洞认领
+          <MenuItem name="3" to='/home/loopholeClaim'>
+            漏洞认领
           </MenuItem>
           <MenuItem name="4">
-              系统公告
+            系统公告
           </MenuItem>
           <Submenu name="5">
-              <template slot="title">
-                  企业服务
-              </template>
-              <MenuItem name="5-1">安全服务</MenuItem>
-              <MenuItem name="5-2">监测服务</MenuItem>
-              <MenuItem name="5-3">专属单位用户</MenuItem>
-              <MenuItem name="5-4">公益单位用户</MenuItem>
+            <template slot="title">
+              企业服务
+            </template>
+            <MenuItem name="5-1">安全服务</MenuItem>
+            <MenuItem name="5-2">监测服务</MenuItem>
+            <MenuItem name="5-3">专属单位用户</MenuItem>
+            <MenuItem name="5-4">公益单位用户</MenuItem>
           </Submenu>
       </Menu>
       </div>

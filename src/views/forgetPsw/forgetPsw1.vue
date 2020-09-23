@@ -75,20 +75,20 @@ export default {
       code: '',
       text: '获取验证码',
       statusCode: false,
-      time: 60,
+      time: 60
     };
   },
   computed: {
     input1s() {
-      if(!this.input1.trim()) return false;
-      let reg1 = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+      if (!this.input1.trim()) return false;
+      let reg1 = /^([a-zA-Z]|[0-9])(\w|-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
       let reg2 = /^1(3|4|5|6|7|8|9)\d{9}$/;
-      return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
+      return !(reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()));
     },
     input3s() {
-      if(!this.input3.trim()) return false;
-      return this.input2 !== this.input3 ? true:false;
-    },
+      if (!this.input3.trim()) return false;
+      return this.input2 !== this.input3;
+    }
   },
   methods: {
     getCode() {
@@ -96,17 +96,18 @@ export default {
     },
     downTimer(){
       this.statusCode = true;
-			let timer = setInterval(() => {
-				this.text = this.time +"s后重新发送";
+      let timer = null;
+      timer = setInterval(() => {
+        this.text = this.time + 's后重新发送';
         this.time--;
-				if(this.time == 0){
-					this.statusCode = false;
-					this.time = 60;
-					this.text = "获取验证码";
-					clearInterval(timer);
-				}
-			},1000);
-		},
+        if (this.time === 0){
+          this.statusCode = false;
+          this.time = 60;
+          this.text = '获取验证码';
+          clearInterval(timer);
+        }
+      }, 1000)
+    }
   }
 }
 </script>

@@ -25,6 +25,6 @@ export default {
 </script>
 
 <style scoped>
-.content {padding: 16px;}
+.content {padding: 32px;}
 .m-t-50 {margin-top: 50px;}
 </style>

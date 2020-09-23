@@ -341,6 +341,33 @@ const routes = [
             component: () => import('@/views/firmHome/List5/notificationSettings.vue')
           }
         ]
+      },
+      { // 主页 漏洞认领
+        path: '/home/loopholeClaim',
+        name: 'homeLoopholeClaim',
+        meta: {
+          title: '漏洞认领',
+          isLogin: false
+        },
+        component: () => import('@/views/home/loopholeClaim/loopholeClaim.vue')
+      },
+      {// 主页 项目池
+        path: '/home/projectPool',
+        name: 'homeProjectPool',
+        meta: {
+          title: '项目池',
+          isLogin: false
+        },
+        component: () => import('@/views/userHome/List1/projectPool.vue')
+      },
+      {// 主页 白帽服务 兑换区
+        path: '/home/exchange',
+        name: 'homeExchange',
+        meta: {
+          title: '项目池',
+          isLogin: false
+        },
+        component: () => import('@/views/home/exchange/exchange.vue')
       }
     ]
   }

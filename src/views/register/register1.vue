@@ -112,23 +112,24 @@ export default {
       code: '',
       text: '获取验证码',
       statusCode: false,
-      time: 60,
+      time: 60
     };
   },
   computed: {
     emails() {
-      if(!this.email.trim()) return false;
-      let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-      return reg.test(this.email.trim()) ? false : true;
+      if (!this.email.trim()) return false;
+      let reg = /^([a-zA-Z]|[0-9])(\w|-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+      // let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+      return !reg.test(this.email.trim());
     },
     pswSures() {
-      if(!this.pswSure.trim()) return false;
-      return this.psw !== this.pswSure ? true : false;
+      if (!this.pswSure.trim()) return false;
+      return this.psw !== this.pswSure;
     },
     mobiles() {
-      if(!this.mobile.trim()) return false;
+      if (!this.mobile.trim()) return false;
       let reg = /^1(3|4|5|6|7|8|9)\d{9}$/;
-      return reg.test(this.mobile.trim()) ? false : true;
+      return !reg.test(this.mobile.trim());
     }
   },
   methods: {
@@ -137,52 +138,52 @@ export default {
     },
     downTimer(){
       this.statusCode = true;
-			let timer = setInterval(() => {
-				this.text = this.time +"s后重新发送";
+      let timer = null;
+      timer = setInterval(() => {
+        this.text = this.time + 's后重新发送';
         this.time--;
-        console.log(this.time)
-				if(this.time == 0){
-					this.statusCode = false;
-					this.time = 6;
-					this.text = "获取验证码";
-					clearInterval(timer);
-				}
-			},1000);
+        if (this.time === 0){
+          this.statusCode = false;
+          this.time = 60;
+          this.text = '获取验证码';
+          clearInterval(timer);
+        }
+      }, 1000);
     },
     login() {
-      if(!this.email.trim()) {
+      if (!this.email.trim()) {
         this.$Message.error('邮箱不能为空');
         return;
       };
-      if(this.emails) {
+      if (this.emails) {
         this.$Message.error('邮箱格式不正确');
         return;
       };
-      if(!this.userName.trim()) {
+      if (!this.userName.trim()) {
         this.$Message.error('用户名不能为空');
         return;
       };
-      if(!this.psw.trim()) {
+      if (!this.psw.trim()) {
         this.$Message.error('密码不能为空');
         return;
       };
-      if(!this.pswSure.trim()) {
+      if (!this.pswSure.trim()) {
         this.$Message.error('确认密码不能为空');
         return;
       };
-      if(this.pswSures) {
+      if (this.pswSures) {
         this.$Message.error('两次密码不一致');
         return;
       };
-      if(!this.mobile.trim()) {
+      if (!this.mobile.trim()) {
         this.$Message.error('手机号码不能为空');
         return;
       };
-      if(this.mobiles) {
+      if (this.mobiles) {
         this.$Message.error('手机号码格式不正确');
         return;
       };
-      if(!this.code.trim()) {
+      if (!this.code.trim()) {
         this.$Message.error('验证码不能为空');
         return;
       };

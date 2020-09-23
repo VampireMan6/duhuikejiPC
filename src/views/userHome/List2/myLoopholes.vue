@@ -46,9 +46,10 @@
             <th class="th2">{{item.time}}</th>
             <th v-if="item.status2 == 1" class="th1">已通过</th>
             <th v-else-if="item.status2 == 2" class="th1">
-              <Tooltip max-width="200" content="设置属性 max-width，当超出最大值后，文本将自动换行，并两端对齐" theme="light">
+              <Button type="error" size='small' @click="errorMsg(item.msg)">驳回</Button>
+              <!-- <Tooltip max-width="200" content="设置属性 max-width，当超出最大值后，文本将自动换行，并两端对齐" theme="light">
                 驳回
-              </Tooltip>
+              </Tooltip> -->
             </th>
             <th v-else-if="item.status2 == 3" class="th1">待修改</th>
             <th v-else class="th1">已完结</th>
@@ -75,6 +76,10 @@
     <div class="t-c margin-y-16">
       <Page :total="dataTotal" :page-size="10" @on-change='changePage'/>
     </div>
+    <!-- 异常显示的提示框 -->
+    <Modal v-model="modal3">
+      <p>{{text}}</p>
+    </Modal>
   </div>
 </template>
 
@@ -97,6 +102,8 @@ export default {
     return {
       projectType: ['全部', '等待审核', '等待确认', '等待修改', '已确认', '已完结'],
       tabClick: 0,
+      text: '',
+      modal3: false,
       dataList: [
         {
           level: 1,
@@ -108,7 +115,8 @@ export default {
           status2: 1,
           integral: 200,
           coin: 300,
-          operation: 1
+          operation: 1,
+          msg: '时代峰峻卡束带结发卡技术附件奥斯卡'
         },
         {
           level: 2,
@@ -120,7 +128,8 @@ export default {
           status2: 2,
           integral: 200,
           coin: 300,
-          operation: 1
+          operation: 1,
+          msg: '时代峰峻卡束带结发卡技术附件奥斯卡'
         },
         {
           level: 3,
@@ -230,6 +239,11 @@ export default {
     },
     changePage(e) { // 分页选择
       console.log(e)
+    },
+    errorMsg(value) {
+      console.log(111111)
+      this.modal3 = true;
+      this.text = value;
     }
   }
 }

@@ -105,7 +105,7 @@ export default {
   data () {
     return {
       dataList: [1, 2, 3, 4, 5, 6, 7],
-      projectType: ['全部', '专属测试项目', '公益测试项目'],
+      projectType: ['全部', '专属项目', '公益项目'],
       projectTime: ['全部', '长期项目', '短期项目'],
       tabClick1: 0,
       tabClick2: 0

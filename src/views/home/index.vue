@@ -30,7 +30,7 @@
           <div class="flex-1 left">
             <div class="t-c f-20 f-w-600 m-b-16"><span>财富榜</span></div>
             <div class="table w-100 relative" :style="{height: tableHeight + 'px'}">
-              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;">
+              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
                 <thead>
                   <tr class="b-f8f">
                     <th>排名</th>
@@ -42,7 +42,16 @@
                 </thead>
                 <tbody>
                   <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in dwealthList" :key='i'>
-                    <th>{{item.ranking}}</th>
+                    <th v-if="i == 0">
+                      <img class="image" src="../../assets/image/ph1.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 1">
+                      <img class="image" src="../../assets/image/ph2.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 2">
+                      <img class="image" src="../../assets/image/ph3.gif" alt="">
+                    </th>
+                    <th v-else>{{i + 1}}</th>
                     <th>{{item.userName}}</th>
                     <th>{{item.team}}</th>
                     <th>{{item.integral}}</th>
@@ -56,7 +65,7 @@
           <div class="flex-1 m-l-16 right">
             <div class="t-c f-20 f-w-600 m-b-16"><span>能力榜</span></div>
             <div class="table w-100 relative" :style="{height: tableHeight + 'px'}">
-              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;">
+              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
                 <thead>
                   <tr class="b-f8f">
                     <th>排名</th>
@@ -68,7 +77,16 @@
                 </thead>
                 <tbody>
                   <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in abilityList" :key='i'>
-                    <th>{{item.ranking}}</th>
+                    <th v-if="i == 0">
+                      <img class="image" src="../../assets/image/ph1.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 1">
+                      <img class="image" src="../../assets/image/ph2.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 2">
+                      <img class="image" src="../../assets/image/ph3.gif" alt="">
+                    </th>
+                    <th v-else>{{i + 1}}</th>
                     <th>{{item.userName}}</th>
                     <th>{{item.team}}</th>
                     <th>{{item.integral}}</th>
@@ -92,7 +110,7 @@
           <div class="p-y-16">
             <div class="t-c f-20 f-w-600 m-b-16"><span>财富榜</span></div>
             <div class="table w-100 relative" :style="{height: tableHeight + 'px'}">
-              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;">
+              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
                 <thead>
                   <tr class="b-f8f">
                     <th>排名</th>
@@ -104,7 +122,16 @@
                 </thead>
                 <tbody>
                   <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in dwealthList" :key='i'>
-                    <th>{{item.ranking}}</th>
+                    <th v-if="i == 0">
+                      <img class="image" src="../../assets/image/ph1.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 1">
+                      <img class="image" src="../../assets/image/ph2.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 2">
+                      <img class="image" src="../../assets/image/ph3.gif" alt="">
+                    </th>
+                    <th v-else>{{i + 1}}</th>
                     <th>{{item.userName}}</th>
                     <th>{{item.team}}</th>
                     <th>{{item.integral}}</th>
@@ -118,7 +145,7 @@
           <div class="flex-1 m-l-16 right p-y-16">
             <div class="t-c f-20 f-w-600 m-b-16"><span>能力榜</span></div>
             <div class="table w-100 relative" :style="{height: tableHeight + 'px'}">
-              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;">
+              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
                 <thead>
                   <tr class="b-f8f">
                     <th>排名</th>
@@ -130,7 +157,16 @@
                 </thead>
                 <tbody>
                   <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in abilityList" :key='i'>
-                    <th>{{item.ranking}}</th>
+                    <th v-if="i == 0">
+                      <img class="image" src="../../assets/image/ph1.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 1">
+                      <img class="image" src="../../assets/image/ph2.gif" alt="">
+                    </th>
+                    <th v-else-if="i == 2">
+                      <img class="image" src="../../assets/image/ph3.gif" alt="">
+                    </th>
+                    <th v-else>{{i + 1}}</th>
                     <th>{{item.userName}}</th>
                     <th>{{item.team}}</th>
                     <th>{{item.integral}}</th>
@@ -260,9 +296,9 @@ export default {
 }
 .w-50 {width: 50%;}
 .f-w-600 {font-weight: 600;}
-tr {height: 47px;line-height: 47px;}
+tr {height: 47px;}
 tr:hover {background-color: rgba(235, 247, 255);}
-th {border-bottom: 1px solid #e6e6e6;text-align: center;}
+th {border-bottom: 1px solid #e6e6e6;text-align: center;min-width: 120px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .b-f8f {background-color: #f8f8f9;}
 .margin-y-16 { margin: 20px 0 16px;}
 tbody tr th {font-weight: 400;}
@@ -273,4 +309,5 @@ tbody tr th {font-weight: 400;}
 .item2 {text-align: center; padding: 2px 8px;margin-left: 16px;font-size: 18px;}
 .item1:hover { background-color: #409EFF;color: #fff;}
 .f-18 {font-size: 18px;padding: 2px;}
+.image {width: 25px;height: 34px;}
 </style>

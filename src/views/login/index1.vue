@@ -93,16 +93,12 @@ export default {
       } else {
         return true
       }
+      // return !reg1.test(this.input1.trim()) || reg2.test(this.input1.trim());
       // return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
     },
     input3s() {
       if (!this.input3.trim()) return false;
-      if (this.input3.trim() !== this.identifyCode) {
-        return true
-      } else {
-        return false
-      }
-      // return this.input3.trim() !== this.identifyCode ? true : false;
+      return this.input3.trim() !== this.identifyCode;
     }
   },
   methods: {
