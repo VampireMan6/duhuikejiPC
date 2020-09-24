@@ -19,18 +19,22 @@
     <Row class="m-b-16">
       <Col :xs="{ span: 0}" :md="{ span: 0}" :xl="{ span: 24}">
         <div class="flex flex-wrap p-x-16">
-          <div class="item1" :class="tabClick2 == i?'b-409 c-w':''" v-for="(item,i) in dataList" :key="i" @click="selectItem(i)">
+          <div class="item1" :class="tabClick2 == i?'b-409 c-w':''" v-for="(item,i) in dataList" :key="i" @click="select(i)">
             {{item}}
           </div>
-          <div class="item1"><span>白帽总数: 10</span></div>
-          <div class="item1"><span>发现漏洞: 10</span></div>
+          <Select v-model="selectText" style="width:120px" placeholder='选择' @on-change='selectItem'>
+            <Option v-for="item in selectList" :value='item' :key="item">{{ item }}</Option>
+          </Select>
+          <div class="item2"><span>白帽总数: 10</span></div>
+          <div class="item2"><span>发现漏洞: 10</span></div>
         </div>
         <div class="flex">
           <!-- 左侧 -->
           <div class="flex-1 left">
             <div class="t-c f-20 f-w-600 m-b-16"><span>财富榜</span></div>
             <div class="table w-100 relative" :style="{height: tableHeight + 'px'}">
-              <table class="w-100" border="0" cellspacing="0" cellpadding="0" style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
+              <table class="w-100" border="0" cellspacing="0" cellpadding="0"
+              style="position: absolute;width:100%;z-index: 2;table-layout: fixed;">
                 <thead>
                   <tr class="b-f8f">
                     <th>排名</th>
@@ -103,6 +107,11 @@
           <div class="item1" :class="tabClick2 == i?'b-409 c-w':''" v-for="(item,i) in dataList" :key="i" @click="selectItem(i)">
             {{item}}
           </div>
+          <Select v-model="selectText" style="width:120px" placeholder='选择' @on-change='selectItem'>
+            <Option v-for="item in selectList" :value='item' :key="item">{{ item }}</Option>
+          </Select>
+        </div>
+        <div class="flex">
           <div class="item2"><span>白帽总数: 10</span></div>
           <div class="item2"><span>发现漏洞: 10</span></div>
         </div>
@@ -196,6 +205,8 @@ export default {
     return {
       tabClick: 0,
       dataList: ['总排行', '年排行', '月排行'],
+      selectList: ['月度奖励', '年度奖励'],
+      selectText: '',
       tabClick2: 0,
       dwealthList: [
         {
@@ -251,7 +262,7 @@ export default {
       abilityList: [
         {
           ranking: 1,
-          userName: '标题1',
+          userName: '阿斯加德发卡束带结发就开始是否',
           team: '2020.12.12',
           integral: 100,
           interests: '月度奖励'
@@ -283,6 +294,9 @@ export default {
   methods: {
     selectItem(i) {
       this.tabClick2 = i
+    },
+    select(value) {
+      console.log(value);
     }
   }
 }
@@ -298,15 +312,14 @@ export default {
 .f-w-600 {font-weight: 600;}
 tr {height: 47px;}
 tr:hover {background-color: rgba(235, 247, 255);}
-th {border-bottom: 1px solid #e6e6e6;text-align: center;min-width: 120px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+tbody tr th {font-weight: 400;border-bottom: 1px solid #e6e6e6;text-align: center;min-width: 120px;max-width: 150px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .b-f8f {background-color: #f8f8f9;}
 .margin-y-16 { margin: 20px 0 16px;}
-tbody tr th {font-weight: 400;}
 .ivu-input-small{border-radius: 12px !important;}
 .p-y-16 {padding: 16px 0;}
 .p-16 {padding: 16px;}
 .item1 {text-align: center; padding: 2px 8px;border-radius: 4px;margin: 0 16px 16px 0;font-size: 18px;}
-.item2 {text-align: center; padding: 2px 8px;margin-left: 16px;font-size: 18px;}
+.item2 {text-align: center; padding: 2px 0px;margin-left: 16px;font-size: 16px;}
 .item1:hover { background-color: #409EFF;color: #fff;}
 .f-18 {font-size: 18px;padding: 2px;}
 .image {width: 25px;height: 34px;}

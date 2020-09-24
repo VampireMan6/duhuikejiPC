@@ -82,7 +82,7 @@ const routes = [
           title: '单位用户找回密码',
           isLogin: false
         },
-        component: import('@/views/forgetPsw/forgetPsw2.vue')
+        component: () => import('@/views/forgetPsw/forgetPsw2.vue')
       },
       {
         path: '/invitationCode',
@@ -175,14 +175,14 @@ const routes = [
             },
             component: () => import('@/views/userHome/List3/myArticle.vue')
           },
-          {// 我的团队 团队列表
-            path: 'team/teamList',
-            name: 'teamList',
+          {// 团队管理 我的团队
+            path: 'team/myTeam',
+            name: 'myTeam',
             meta: {
               title: '团队列表',
               isLogin: false
             },
-            component: () => import('@/views/userHome/List4/teamList.vue')
+            component: () => import('@/views/userHome/List4/myTeam.vue')
           },
           {// 我的团队 创建团队
             path: 'team/createTeam',

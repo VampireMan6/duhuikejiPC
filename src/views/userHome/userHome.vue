@@ -46,12 +46,12 @@
                 <el-submenu index="5">
                   <template slot="title">
                     <i class="iconfont icon-zu"></i>
-                    <span slot="title">我的团队</span>
+                    <span slot="title">团队管理</span>
                   </template>
-                  <el-menu-item index="我的团队,团队列表,teamList">团队列表</el-menu-item>
-                  <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
+                  <el-menu-item index="团队管理,我的团队,myTeam">我的团队</el-menu-item>
+                  <!-- <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
                   <el-menu-item index="我的团队,团队管理,teamManage">团队管理</el-menu-item>
-                  <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item>
+                  <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item> -->
                 </el-submenu>
                 <el-submenu index>
                   <template slot="title">
@@ -146,12 +146,12 @@
           <el-submenu index="5">
             <template slot="title">
               <i class="iconfont icon-zu"></i>
-              <span slot="title">我的团队</span>
+              <span slot="title">团队管理</span>
             </template>
-            <el-menu-item index="我的团队,团队列表,teamList">团队列表</el-menu-item>
-            <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
+            <el-menu-item index="团队管理,我的团队,myTeam">我的团队</el-menu-item>
+            <!-- <el-menu-item index="我的团队,创建团队,createTeam">创建团队</el-menu-item>
             <el-menu-item index="我的团队,团队管理,teamManage">团队管理</el-menu-item>
-            <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item>
+            <el-menu-item index="我的团队,团队活动,teamActivity">团队活动</el-menu-item> -->
           </el-submenu>
           <el-submenu index>
             <template slot="title">

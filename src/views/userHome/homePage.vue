@@ -9,10 +9,24 @@
             <div class="echart1" ref="chart1" style="width:30%;height:250px"></div>
             <div class="echart1" ref="chart2" style="width:30%;height:250px"></div>
           </div>
-          <div class="right t-c" style="width: 300px">
-            <img class="headImg" src="../../assets/image/baseData1.jpg" alt="">
-            <div class="w-100">
-              id
+          <div class="right flex coloum j-c" style="width: 300px">
+            <img class="headImg m-b-16" src="../../assets/image/baseData1.jpg" alt="">
+            <div class="w-100 flex f-a m-b-16">
+              <span>id</span>
+              <span>排名</span>
+              <span>积分</span>
+            </div>
+            <div class="w-100 flex f-a m-b-16">
+              <span>虚拟币</span>
+              <span>漏洞总数</span>
+              <span>徽章</span>
+            </div>
+            <div class="w-100 t-c">
+              <span>个性签名</span>
+            </div>
+            <!--  -->
+            <div>
+
             </div>
           </div>
         </div>
