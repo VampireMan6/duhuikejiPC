@@ -23,7 +23,7 @@
           <div class="flex-1 left">
             <div class="flex m-b-16">
               <div class="search flex">
-                <Input size='small' search placeholder="请输入漏洞名称/厂商名称" @on-search='searchValue'/>
+                <Input size='small' v-model="searchText" search placeholder="请输入漏洞名称/厂商名称" @on-search='searchValue'/>
               </div>
               <Select class="m-l-16" v-model="selectText1" size="small" style="width:120px" placeholder='漏洞等级选择' @on-change='selectItem(true)'>
                 <Option v-for="item in selectList1" :value='item' :key="item">{{ item }}</Option>
@@ -45,7 +45,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in dataList" :key='i'>
+                  <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in fliterDataList" :key='i'>
                     <th>{{item.title}}</th>
                     <th>{{item.name}}</th>
                     <th>{{item.userName}}</th>
@@ -56,7 +56,7 @@
                 </tbody>
               </table>
             </div>
-            <div v-if="dataList.length === 0" class="t-c" style="margin-top: 16px;">
+            <div v-if="dataTotal === 0" class="t-c" style="margin-top: 16px;">
               <p>暂无数据</p>
             </div>
             <div class="t-c margin-y-16">
@@ -82,7 +82,7 @@
       <Col :xs="{ span: 24}" :md="{ span: 0}" :xl="{ span: 0}">
         <div class="flex m-b-16">
           <div class="search flex">
-            <Input size='small' search placeholder="请输入漏洞名称/厂商名称" @on-search='searchValue'/>
+            <Input size='small' v-model="searchText" search placeholder="请输入漏洞名称/厂商名称" @on-search='searchValue'/>
           </div>
           <Select class="m-l-16" v-model="selectText1" size="small" style="width:120px" placeholder='漏洞等级选择' @on-change='selectItem(true)'>
             <Option v-for="item in selectList1" :value='item' :key="item">{{ item }}</Option>
@@ -119,7 +119,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in dataList" :key='i'>
+              <tr :class="i%2 ==1?'b-f8f':''" v-for="(item,i) in fliterDataList" :key='i'>
                 <th>{{item.title}}</th>
                 <th>{{item.name}}</th>
                 <th>{{item.userName}}</th>
@@ -130,7 +130,7 @@
             </tbody>
           </table>
         </div>
-        <div v-if="dataList.length === 0" class="t-c" style="margin-top: 16px;">
+        <div v-if="dataTotal === 0" class="t-c" style="margin-top: 16px;">
           <p>暂无数据</p>
         </div>
         <div class="t-c margin-y-16">
@@ -145,44 +145,50 @@
 export default {
   computed: {
     tableHeight() {
-      if (this.dataList.length === 0) {
+      if (this.fliterDataList.length === 0) {
         return 66
       } else {
-        return 48 * (this.dataList.length + 1)
+        return 48 * (this.fliterDataList.length + 1)
       }
     },
     dataTotal() {
-      return this.dataList.length
+      return this.fliterDataList.length
+    },
+    fliterDataList() {
+      let arr = [];
+      arr = this.dataList.filter(item => item.name.indexOf(this.searchText.trim()) >= 0);
+      return arr
     }
   },
   data () {
     return {
       tabClick: 0,
+      searchText: '',
       dataList: [
         {
           title: '重庆某某某公司存在某某漏洞',
-          name: '我双方均萨达撒旦法撒旦法萨达撒旦法大是发送到发生',
+          name: '1',
           userName: '我的圣诞节阿双方均萨达',
           time: '2020.10.10',
           numberId: 'dhbox-2020.10.10'
         },
         {
           title: '重庆某某某公司存在某某漏洞',
-          name: '我双方均萨达撒旦法撒旦法萨达撒旦法大是发送到发生',
+          name: '12',
           userName: '我的圣诞节阿双方均萨达',
           time: '2020.10.10',
           numberId: 'dhbox-2020.10.10'
         },
         {
           title: '重庆某某某公司存在某某漏洞',
-          name: '我双方均萨达撒旦法撒旦法萨达撒旦法大是发送到发生',
+          name: '3',
           userName: '我的圣诞节阿双方均萨达',
           time: '2020.10.10',
           numberId: 'dhbox-2020.10.10'
         },
         {
           title: '重庆某某某公司存在某某漏洞',
-          name: '我双方均萨达撒旦法撒旦法萨达撒旦法大是发送到发生',
+          name: '23',
           userName: '我的圣诞节阿双方均萨达',
           time: '2020.10.10',
           numberId: 'dhbox-2020.10.10'
@@ -195,8 +201,8 @@ export default {
     }
   },
   methods: {
-    searchValue(value) { // 搜索
-      console.log(value)
+    searchValue(value) { // 点击搜索或按下回车键时触发
+      this.searchText = value;
     },
     selectItem(value) { // 项目选择
       console.log(value);

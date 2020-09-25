@@ -12,9 +12,18 @@
               </template>
               <MenuItem name="1-1" to='/home/exchange'>兑换区</MenuItem>
               <MenuItem name="1-2">招募区</MenuItem>
-              <MenuItem name="1-3">个人排行</MenuItem>
+              <MenuItem name="1-3" to='/home/personalRanking'>个人排行</MenuItem>
               <MenuItem name="1-4">团队排行</MenuItem>
               <MenuItem name="1-5">奖励方案说明</MenuItem>
+          </Submenu>
+          <Submenu name="5">
+            <template slot="title">
+              企业服务
+            </template>
+            <MenuItem name="5-1">安全服务</MenuItem>
+            <MenuItem name="5-2">监测服务</MenuItem>
+            <MenuItem name="5-3">专属单位用户</MenuItem>
+            <MenuItem name="5-4">公益单位用户</MenuItem>
           </Submenu>
           <MenuItem name="2" to='/home/projectPool'>
             项目池
@@ -25,20 +34,11 @@
           <MenuItem name="4">
             系统公告
           </MenuItem>
-          <Submenu name="5">
-            <template slot="title">
-              企业服务
-            </template>
-            <MenuItem name="5-1">安全服务</MenuItem>
-            <MenuItem name="5-2">监测服务</MenuItem>
-            <MenuItem name="5-3">专属单位用户</MenuItem>
-            <MenuItem name="5-4">公益单位用户</MenuItem>
-          </Submenu>
       </Menu>
       </div>
       <!-- 顶部右侧导航栏 -->
       <div class="right flex">
-        <Menu mode="horizontal" theme="primary" active-name="1" v-if="!$store.state.isLogin">
+        <Menu mode="horizontal" theme="primary" active-name="1" v-if="!$store.state.haslogin">
           <MenuItem name="6" to="/login1">
               白帽登录
           </MenuItem>
@@ -54,22 +54,22 @@
           </MenuItem>
         </Menu>
         <div v-else>
-          <Menu mode="horizontal" theme="primary" active-name="1">
-          <Submenu name="9">
-              <template slot="title">
-                用户名
-              </template>
-              <MenuItem name="10-1">基本资料</MenuItem>
-              <MenuItem name="10-2">修改密码</MenuItem>
-              <MenuItem name="10-2">退出登录</MenuItem>
-          </Submenu>
-          <MenuItem name="10">
-            <Icon type="md-notifications-outline" size="16"/>
-          </MenuItem>
-          <MenuItem name="11" v-if="true">
-              提交漏洞
-          </MenuItem>
-        </Menu>
+          <Menu mode="horizontal" theme="primary" active-name="1" @on-select="select">
+            <Submenu name="9">
+                <template slot="title">
+                  用户名
+                </template>
+                <MenuItem name="10-1" to='/userhome/personalCenter/baseData'>基本资料</MenuItem>
+                <MenuItem name="10-2" to='/userhome/personalCenter/changePassword'>修改密码</MenuItem>
+                <MenuItem name="logOut">退出登录</MenuItem>
+            </Submenu>
+            <MenuItem name="10">
+              <Icon type="md-notifications-outline" size="16"/>
+            </MenuItem>
+            <MenuItem name="11" v-if="true" to='/userhome/loophole/submitLoophole'>
+                提交漏洞
+            </MenuItem>
+          </Menu>
         </div>
       </div>
     </div>
@@ -81,7 +81,15 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+    select(value) {
+      console.log(value);
+      if (value === 'logOut') {
+        this.$store.commit('logOut');
+        this.$router.push({path: '/home'})
+      }
+    }
+  }
 }
 </script>
 

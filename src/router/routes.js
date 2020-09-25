@@ -1,16 +1,3 @@
-
-// const layout = () => import('@/views/layout')
-// const home = () => import('@/views/home')
-// const login1 = () => import('@/views/login/index1.vue')
-// const login2 = () => import('@/views/login/index2.vue')
-// const register1 = () => import('@/views/register/register1.vue')
-// const register2 = () => import('@/views/register/register2.vue')
-// const forgetPsw1 = () => import('@/views/forgetPsw/forgetPsw1.vue')
-// const forgetPsw2 = () => import('@/views/forgetPsw/forgetPsw2.vue')
-// const invitationCode = () => import('@/views/invitationCode/invitationCode.vue')
-// const userhome = () => import('@/views/userHome/userHome.vue')
-// const user1 = () => import('@/views/userHome/user1.vue')
-
 const routes = [
   {
     path: '/',
@@ -21,7 +8,7 @@ const routes = [
     },
     component: () => import('@/views/layout'),
     children: [
-      {
+      {// 白帽登录
         path: '/login1',
         name: 'login1',
         meta: {
@@ -30,7 +17,7 @@ const routes = [
         },
         component: () => import('@/views/login/index1.vue')
       },
-      {
+      {// 单位用户登录
         path: '/login2',
         name: 'login2',
         meta: {
@@ -39,7 +26,7 @@ const routes = [
         },
         component: () => import('@/views/login/index2.vue')
       },
-      {
+      {// 白帽注册
         path: '/register1',
         name: 'register1',
         meta: {
@@ -48,7 +35,7 @@ const routes = [
         },
         component: () => import('@/views/register/register1.vue')
       },
-      {
+      {// 单位用户注册
         path: '/register2',
         name: 'register2',
         meta: {
@@ -57,7 +44,7 @@ const routes = [
         },
         component: () => import('@/views/register/register2.vue')
       },
-      { // 首页
+      {// 首页
         path: '/home',
         name: 'home',
         meta: {
@@ -66,7 +53,7 @@ const routes = [
         },
         component: () => import('@/views/home')
       },
-      {
+      {// 白帽账户找回密码
         path: '/forgetPsw1',
         name: 'forgetPsw1',
         meta: {
@@ -75,7 +62,7 @@ const routes = [
         },
         component: () => import('@/views/forgetPsw/forgetPsw1.vue')
       },
-      {
+      {// 单位用户找回密码
         path: '/forgetPsw2',
         name: 'forgetPsw2',
         meta: {
@@ -84,7 +71,7 @@ const routes = [
         },
         component: () => import('@/views/forgetPsw/forgetPsw2.vue')
       },
-      {
+      {// 邀请码
         path: '/invitationCode',
         name: 'invitationCode',
         meta: {
@@ -247,6 +234,15 @@ const routes = [
             },
             component: () => import('@/views/userHome/List5/accountBinding.vue')
           },
+          {// 个人中心 收款信息
+            path: 'personalCenter/collectionMsg',
+            name: 'collectionMsg',
+            meta: {
+              title: '收款信息',
+              isLogin: false
+            },
+            component: () => import('@/views/userHome/List5/collectionMsg.vue')
+          },
           {// 个人中心 修改密码
             path: 'personalCenter/changePassword',
             name: 'changePassword',
@@ -368,6 +364,15 @@ const routes = [
           isLogin: false
         },
         component: () => import('@/views/home/exchange/exchange.vue')
+      },
+      {// 主页 白帽服务 个人排行
+        path: '/home/personalRanking',
+        name: 'personalRanking',
+        meta: {
+          title: '个人排行',
+          isLogin: false
+        },
+        component: () => import('@/views/home/ranking/personalRanking.vue')
       }
     ]
   }

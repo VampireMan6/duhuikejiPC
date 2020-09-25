@@ -218,6 +218,7 @@ export default {
     },
     login() {
       localStorage.setItem('status', 'sssssssss');
+      this.$store.commit('logIn', '1111111');
       this.$router.push({ path: '/userhome' });
       if (!this.input1.trim()) {
         this.$Message.error('邮箱/手机号不能为空');
@@ -238,7 +239,7 @@ export default {
       if (this.input3s) {
         this.$Message.warning('验证码错误');
         return false
-      }
+      };
     }
   }
 };

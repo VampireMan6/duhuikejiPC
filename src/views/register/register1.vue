@@ -273,8 +273,13 @@ export default {
       // return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
     },
     input4s() {
-      if (!this.input3.trim()) return false;
-      return this.input3.trim() !== this.input4.trim();
+      if (!this.input3.trim()) {
+        return false
+      } else if (!this.input4.trim()) {
+        return false
+      } else {
+        return this.input3.trim() !== this.input4.trim();
+      }
     }
   },
   methods: {

@@ -61,6 +61,7 @@
                   <el-menu-item index="个人中心,基本资料,baseData">基本资料</el-menu-item>
                   <el-menu-item index="个人中心,我的积分,myIntegral">我的积分</el-menu-item>
                   <el-menu-item index="个人中心,账号绑定,accountBinding">账号绑定</el-menu-item>
+                  <el-menu-item index="个人中心,收款信息,collectionMsg">收款信息</el-menu-item>
                   <el-menu-item index="个人中心,收货地址,address">收货地址</el-menu-item>
                   <el-menu-item index="个人中心,密码修改,changePassword">密码修改</el-menu-item>
                 </el-submenu>
@@ -161,6 +162,7 @@
             <el-menu-item index="个人中心,基本资料,baseData">基本资料</el-menu-item>
             <el-menu-item index="个人中心,我的积分,myIntegral">我的积分</el-menu-item>
             <el-menu-item index="个人中心,账号绑定,accountBinding">账号绑定</el-menu-item>
+            <el-menu-item index="个人中心,收款信息,collectionMsg">收款信息</el-menu-item>
             <el-menu-item index="个人中心,收货地址,address">收货地址</el-menu-item>
             <el-menu-item index="个人中心,密码修改,changePassword">密码修改</el-menu-item>
           </el-submenu>

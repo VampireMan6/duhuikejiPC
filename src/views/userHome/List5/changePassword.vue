@@ -11,9 +11,14 @@
             <span class="spanLeft1">* 新密码</span>
             <Input v-model="input2" placeholder="请输入新密码" style="width: 80%" />
           </div>
-          <div class="m-b-16">
+          <div class="flex">
             <span class="spanLeft1">* 确认密码</span>
-            <Input v-model="input3" placeholder="请再次输入新密码" style="width: 80%" />
+            <div class="m-b-16" style="width: 80%">
+              <Input v-model="input3" placeholder="请再次输入新密码" style="width: 100%" />
+              <div class="title">
+                <p v-if="input3s">两次密码输入不一致</p>
+              </div>
+            </div>
           </div>
           <div class="m-b-16">
             <span class="spanLeft1"></span>
@@ -27,7 +32,10 @@
             <span class="spanLeft2">* 新密码</span>
             <Input class="m-b-16" v-model="input2" placeholder="请输入新密码" style="width: 100%" />
             <span class="spanLeft2">* 确认密码</span>
-            <Input class="m-b-16" v-model="input3" placeholder="请再次输入新密码" style="width: 100%" />
+            <Input v-model="input3" placeholder="请再次输入新密码" style="width: 100%" />
+            <div class="title m-b-16">
+                <p v-if="input3s">两次密码输入不一致</p>
+              </div>
             <div>
               <Button type="primary" @click='submit'>提交</Button>
             </div>
@@ -40,6 +48,17 @@
 
 <script>
 export default {
+  computed: {
+    input3s() {
+      if (!this.input2.trim()) {
+        return false
+      } else if (!this.input3.trim()) {
+        return false
+      } else {
+        return this.input2.trim() !== this.input3.trim();
+      }
+    }
+  },
   data () {
     return {
       input1: '',

@@ -94,7 +94,9 @@
                     placeholder="请再次输入密码"
                     style="width: 100%"
                   />
-                  <div class="title"></div>
+                  <div class="title">
+                    <p v-if="input5s">两次密码输入不一致</p>
+                  </div>
                 </div>
               </div>
               <!-- 验证码 -->
@@ -192,11 +194,13 @@
                   placeholder="请再次输入密码"
                   style="width: 100%"
                 />
-                <div class="title"></div>
+                <div class="title">
+                  <p v-if="input5s">两次密码输入不一致</p>
+                </div>
               </div>
               <!-- 验证码 -->
               <span class="spanLeft2">验证码 :</span>
-              <div class="flex m-b-16">
+              <div class="flex">
                 <Input
                   v-model="input6"
                   placeholder="请输入验证码"
@@ -260,9 +264,18 @@ export default {
       // return !reg1.test(this.input1.trim()) || reg2.test(this.input1.trim());
       // return reg1.test(this.input1.trim()) || reg2.test(this.input1.trim()) ? false : true
     },
+    input5s() {
+      if (!this.input4.trim()) {
+        return false
+      } else if (!this.input5.trim()) {
+        return false
+      } else {
+        return this.input4.trim() !== this.input5.trim();
+      }
+    },
     input6s() {
       if (!this.input6.trim()) return false;
-      return this.input6.trim() !== this.identifyCode;
+      return this.input6 !== this.identifyCode;
     }
   },
   methods: {

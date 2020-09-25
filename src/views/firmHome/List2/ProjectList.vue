@@ -111,6 +111,9 @@ export default {
     errorMsg(value) {
       this.modal3 = true;
       this.text = value;
+    },
+    changePage(e) {
+      
     }
   }
 }
